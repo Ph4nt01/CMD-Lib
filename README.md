@@ -1,23 +1,18 @@
-# Note-Vault
+# CyberNotes-Vault
 
-This repository is maintained as a personal knowledge base and progress tracker.
+**CyberNotes-Vault** is a personal knowledge base with a focus on web app pentesting and offensive security techniques.
+
+
+---
 
 ## What's Inside
 
-This repository includes:
+- **Command-Line Essentials** — Linux, networking, and CLI tricks
+- **Web Exploitation** — SQLi, XSS, IDOR, SSTI, and more
+- **Payload Vault** — A library of proven attack strings and snippets
+- **Forensics Tips** — Wireshark filters, stego tools, metadata extraction
+- **Crypto Basics** — XOR, RSA, and classical cipher tools
+- **Challenge Log** — Solved CTFs, lessons learned, and payloads used
+- **Toolkit Ideas** — Mini tools/scripts I plan to build or improve
 
-- Linux and CLI commands for CTF use
-- Web exploitation guides and payloads
-- Forensics tricks, tools, and filters
-- Practical cryptography notes
-- Reversing and binary exploitation tips
-- Solved challenge logs
-- Reusable scripts and automation toolkits
-
-
-## How to Use
-
-- Clone this repo and open it with [Obsidian](https://obsidian.md/) or any Markdown editor.
-- Update notes as you solve CTFs or learn new techniques.
-
-Happy hacking.
+---
