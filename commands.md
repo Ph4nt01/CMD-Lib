@@ -8,10 +8,6 @@ find -size 1033c -name example.md                  #Find files named example.md 
 sort file.txt | uniq                               #Output the unique lines from a input or file.
 xxd -r                                             #Revert a hexdump text into binary
 
-
-
-
-
 ```
 
 ### Network
@@ -27,3 +23,4 @@ diff                                               #compare files or directories
 ### Forensics
 ```
 ```
+
