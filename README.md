@@ -13,7 +13,7 @@
 - **Payload Vault** — A library of attack strings and snippets
 - **Forensics Tips** — Wireshark filters, stego tools, metadata extraction
 - **Crypto Basics** — XOR, RSA, and classical cipher tools
-- **Challenge Log** — Solved CTFs, lessons learned, and payloads used
+- **Challenge Log** — Solved CTF and methods/payloads used(in short)
 - **Toolkit Ideas** — Mini tools/scripts I plan to build or improve
 
 ---
