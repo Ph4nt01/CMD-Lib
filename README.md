@@ -8,9 +8,9 @@
 
 ## What's Inside
 
-- **Command-Line Essentials** — Linux, networking, and CLI tricks
+- **Usefull Commands** — Newly commands i learn about Linux, networking and etc
 - **Web Exploitation** — SQLi, XSS, IDOR, SSTI, and more
-- **Payload Vault** — A library of proven attack strings and snippets
+- **Payload Vault** — A library of attack strings and snippets
 - **Forensics Tips** — Wireshark filters, stego tools, metadata extraction
 - **Crypto Basics** — XOR, RSA, and classical cipher tools
 - **Challenge Log** — Solved CTFs, lessons learned, and payloads used
