@@ -8,7 +8,7 @@
 
 ## What's Inside
 
-- **Useful Commands** — Newly commands i learn about Linux, networking and etc
+- **Useful Commands** — Newly learned commands about Linux, networking and etc
 - **Web Exploitation** — SQLi, XSS, IDOR, SSTI, and more
 - **Payload Vault** — A library of attack strings and snippets
 - **Forensics Tips** — Wireshark filters, stego tools, metadata extraction
