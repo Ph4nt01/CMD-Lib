@@ -8,7 +8,7 @@
 
 ## What's Inside
 
-- [**Useful Commands**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/commands.md])— Newly learned commands about Linux, networking and etc
+- [**Useful Commands**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/commands.md)— Newly learned commands about Linux, networking and etc
 - [**Web Exploitation**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/web.md) — SQLi, XSS, IDOR, SSTI, and more
 - [**Payload Vault**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/payloads.md) — A library of attack strings and snippets
 - [**Forensics Tips**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/forensics.md) — Wireshark filters, stego tools, metadata extraction
