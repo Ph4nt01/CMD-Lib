@@ -1,26 +1,32 @@
-# Commands 
+### File Operations
+file                                               #Inspect file type
+find -size 1033c -name example.md                  #Find files by size/name
+sort file.txt | uniq                               #Filter unique lines
+xxd -r                                             #Revert hexdump to binary
+diff                                               #Compare files/dirs
 
+### Network Operations
+scp -P 2220 user@host:file.txt ~/                  #Secure file copy
+openssl s_client -connect host:port                #SSL/TLS inspection
+ncat --ssl host port                               #SSL/TLS connection
+nmap -sV host                                      #Service/port scanning
 
-### File ops
-```
-file                                               #Shows file type.
-find -size 1033c -name example.md                  #Find files named example.md with size of 1033 bytes.    
-sort file.txt | uniq                               #Output the unique lines from a input or file.
-xxd -r                                             #Revert a hexdump text into binary
+### Process Management
+crontab -l                                         #View scheduled tasks
+ps aux | grep root                                 #Find processes
+kill -9 PID                                        #Force-kill process
 
-```
+### Privilege Escalation
+sudo -l                                            #Check usable sudo rights
+find / -perm -4000 2>/dev/null                     #Find SUID binaries
+linpeas.sh                                         #Auto PEAS scanner
 
-### Network
-```
-scp -P 2220 user@host:file.txt /home               #Download a file from a host to home dir.
-openssl s_client -connect host:port                #Connect to a SSL/TLS connection
-ncat --ssl host port                               #Connect to a SSL/TLS connection
-nmap -sV host                                      #Scan a host for open ports and services they provide
-diff                                               #compare files or directories
-
-```
+### Web Testing
+sqlmap -u "http://site.com?param=1"                #SQL injection testing
+ffuf -w wordlist -u http://site.com/FUZZ           #Directory fuzzing
+curl -H "X-Header: test" http://site.com           #Custom header requests
 
 ### Forensics
-```
-```
-
+strings file.bin | grep "flag{"                    #Extract embedded strings
+exiftool image.jpg                                 #View metadata
+binwalk -e firmware.bin                            #Extract embedded files
