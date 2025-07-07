@@ -7,6 +7,37 @@ xxd -r                                             #Revert hexdump to binary
 diff                                               #Compare files/dirs
 ```
 
+### Docker
+#### runing kali in docker speedrun:
+```
+docker pull kali
+
+docker run -t -d --name test kali
+
+docker exec -it test bash
+```
+##### after usage
+```
+docker stop test`
+```
+##### for using it again
+```
+docker start test
+
+docker exec -it test bash
+
+```
+
+### Git
+#### pushing files:
+```
+git add .
+
+git commit -m "hello"
+
+git push origin
+```
+
 ### Network Operations
 ```
 scp -P 2220 user@host:file.txt ~/                  #Secure file copy
