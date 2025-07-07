@@ -18,7 +18,7 @@ docker exec -it test bash
 ```
 ##### after usage
 ```
-docker stop test`
+docker stop test
 ```
 ##### for using it again
 ```
@@ -35,7 +35,7 @@ git add .
 
 git commit -m "hello"
 
-git push origin
+git push
 ```
 
 ### Network Operations
