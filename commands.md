@@ -61,9 +61,17 @@ linpeas.sh                                         #Auto PEAS scanner
 ```
 
 ### Web Testing
+#### Fuzzing username:
+##### - always use -v in this example the only diff was the redirect location which verbose mode shows it.
+```
+ffuf -X POST \                                                                                                                   ─╯
+-d "uid=FUZZ&passw=admin&btnSubmit=Login" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-u https://demo.testfire.net/doLogin \
+-w ad.txt -v
+```
 ```
 sqlmap -u "http://site.com?param=1"                #SQL injection testing
-ffuf -w wordlist -u http://site.com/FUZZ           #Directory fuzzing
 curl -H "X-Header: test" http://site.com           #Custom header requests
 ```
 
