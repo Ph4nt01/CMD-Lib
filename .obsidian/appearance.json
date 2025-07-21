@@ -1,0 +1,10 @@
+{
+  "cssTheme": "GitHub Theme",
+  "theme": "obsidian",
+  "interfaceFontFamily": "JetBrains Mono",
+  "textFontFamily": "JetBrains Mono",
+  "monospaceFontFamily": "JetBrains Mono",
+  "showViewHeader": false,
+  "showRibbon": false,
+  "accentColor": "#57a5ff"
+}
