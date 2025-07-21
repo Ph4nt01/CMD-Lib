@@ -14,7 +14,7 @@ diff                                               #Compare files/dirs
 ```
 docker pull kali
 ```
-###### for running it on another device:
+###### for using the pulled image on another device:
 ```
 #on the device that pulled kali:
 docker save kali:latest -o kali.tar
