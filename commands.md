@@ -9,18 +9,31 @@ diff                                               #Compare files/dirs
 
 ### Docker
 #### running Kali in docker speedrun:
+
+##### pulling:
 ```
 docker pull kali
+```
+#####
+```
+docker save kali:latest -o kali.tar
 
+scp kali.tar username@ipaddress /tmp/
+
+docker load -i /tmp/kali.tar
+```
+
+##### running:
+```
 docker run -t -d --name test kali
 
 docker exec -it test bash
 ```
-##### after usage
+##### after usage:
 ```
 docker stop test
 ```
-##### for using it again
+##### for using it again:
 ```
 docker start test
 
