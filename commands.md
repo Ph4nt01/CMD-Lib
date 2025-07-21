@@ -6,7 +6,7 @@ sort file.txt | uniq                               #Filter unique lines
 xxd -r                                             #Revert hexdump to binary
 diff                                               #Compare files/dirs
 ```
-test
+
 ### Docker
 #### runing kali in docker speedrun:
 ```
@@ -82,3 +82,4 @@ exiftool image.jpg                                 #View metadata
 binwalk -e firmware.bin                            #Extract embedded files
 ```
 
+.
