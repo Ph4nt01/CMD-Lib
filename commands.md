@@ -63,7 +63,7 @@ linpeas.sh                                         #Auto PEAS scanner
 #### Fuzzing username:
 ##### - always use -v in this example the only diff was the redirect location which verbose mode shows it.
 ```
-ffuf -X POST \                                                                                                                   ─╯
+ffuf -X POST \                                                                   
 -d "uid=FUZZ&passw=admin&btnSubmit=Login" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -u https://demo.testfire.net/doLogin \
