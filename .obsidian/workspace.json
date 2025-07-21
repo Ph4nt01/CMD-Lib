@@ -168,7 +168,10 @@
   },
   "active": "ab24760e35d988d5",
   "lastOpenFiles": [
-    "crypto.md",
-    "README.md"
+    "forensics.md",
+    "commands.md",
+    "README.md",
+    "flag_log.md",
+    "crypto.md"
   ]
 }
