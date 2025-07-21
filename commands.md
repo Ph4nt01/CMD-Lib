@@ -14,12 +14,13 @@ diff                                               #Compare files/dirs
 ```
 docker pull kali
 ```
-#####
+###### for running it on another device:
 ```
+#on the device that pulled kali:
 docker save kali:latest -o kali.tar
-
 scp kali.tar username@ipaddress /tmp/
 
+#on the other device that wants to use the pulled image:
 docker load -i /tmp/kali.tar
 ```
 
