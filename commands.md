@@ -8,7 +8,7 @@ diff                                               #Compare files/dirs
 ```
 
 ### Docker
-#### runing kali in docker speedrun:
+#### running Kali in docker speedrun:
 ```
 docker pull kali
 
@@ -25,7 +25,6 @@ docker stop test
 docker start test
 
 docker exec -it test bash
-
 ```
 
 ### Git
@@ -81,5 +80,3 @@ strings file.bin | grep "flag{"                    #Extract embedded strings
 exiftool image.jpg                                 #View metadata
 binwalk -e firmware.bin                            #Extract embedded files
 ```
-
-.
