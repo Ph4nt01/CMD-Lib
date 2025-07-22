@@ -15,5 +15,5 @@
 - [**Crypto Basics**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/crypto.md) — XOR, RSA, and classical cipher tools
 - [**Challenge Log**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/flag_log.md) — Solved CTF and methods/payloads used(in short)
 - [**Toolkit Ideas**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/toolkit.md) — Mini tools/scripts I plan to build or improve
-- [**Tips and Tricks**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/tricks.md) — Some short but usful tips and tricks 
+- [**Tips and Tricks**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/tricks.md) — Some short but useful tips and tricks 
 ---
