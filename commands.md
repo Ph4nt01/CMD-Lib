@@ -2,12 +2,21 @@
 ## 🔧 File Operations
 ```bash
 file target_file                  # Identify file type/magic bytes
+
 find /path -size +1000c -name "*.log"  # Locate files >1000 bytes with specific size/name (c=bytes, +value for minimum)
+
 sort file.txt | uniq              # Remove duplicate lines from sorted text
+
 xxd binary_shellcode             # Generate hexdump of binary data
+
 xxd -r hexdump.txt | xxd -r      # Convert hexdump back to executable binary
+
 diff file1 file2                  # Compare differences between files
+
 diff -r dir1/ dir2/               # Recursive directory comparison
+
+# Display number of occurrences of each line, sorted by the most frequent:
+cat example.txt | uniq -c | sort -nr
 ```
 
 ---
@@ -108,6 +117,23 @@ ffuf -X POST \
     -w usernames.txt -v
 ```
 
+#### Fuzzing usernames and printing **unique** redirect locations only:
+```bash
+ffuf -X POST \ -d "uid=FUZZ&passw=admin&btnSubmit=Login" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-u https://demo.testfire.net/doLogin \
+-w admin.txt \
+-mc 302 \
+-v 2>&1 | awk '
+/\| --> \|/ {redir=$NF}
+/\* FUZZ:/ {
+    user=$NF
+    if (!(redir in seen)) {
+        seen[redir] = user
+        print redir, user
+    }
+}'
+```
 ### SQL Injection & HTTP Testing
 ```bash
 sqlmap -u "http://target/page.php?id=1" --batch  # Basic injection detection
