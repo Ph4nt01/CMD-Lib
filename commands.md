@@ -1,4 +1,3 @@
-
 ## 🔧 File Operations
 ```bash
 # Identify file type/magic bytes
@@ -11,7 +10,7 @@ find /path -size +1000c -name "*.log"
 sort file.txt | uniq
 
 # Generate hexdump of binary data
-xxd binary_shellcode            
+xxd binary_shellcode
 
 # Convert hexdump back to executable binary
 xxd -r hexdump.txt | xxd -r
@@ -22,7 +21,7 @@ diff file1 file2
 # Recursive directory comparison
 diff -r dir1/ dir2/
 
-# Display number of occurrences of each line, sorted by the most frequent:
+# Display number of occurrences of each line, sorted by the most frequent
 cat example.txt | uniq -c | sort -nr
 ```
 
@@ -41,21 +40,23 @@ scp -P <Port> kali_image.tar remote_user@remote_ip:/tmp/
 
 # On destination host:
 docker load < kali_image.tar
-docker images | grep kali         # Verify import success
+
+# Verify import success
+docker images | grep kali
 ```
 
 #### Container Lifecycle Management
 ```bash
-# Start interactive container:
+# Start interactive container
 docker run -d --name kali_shell kalilinux/kali:latest tail -f /dev/null
 
-# Access shell:
+# Access shell
 docker exec -it kali_shell /bin/bash
 
-# Stop container:
+# Stop container
 docker stop kali_shell
 
-# Restart container:
+# Restart container
 docker start kali_shell && docker exec -it kali_shell /bin/bash
 ```
 
@@ -63,13 +64,13 @@ docker start kali_shell && docker exec -it kali_shell /bin/bash
 
 ## 🐱 Git Essentials
 ```bash
-# Track all changes:
+# Track all changes
 git add .
 
-# Commit with message:
+# Commit with message
 git commit -m "Initial commit"
 
-# Push to remote (ensure remote set first):
+# Push to remote (ensure remote set first)
 git push
 ```
 
@@ -81,33 +82,52 @@ git push
 
 ## 🌐 Network Operations
 ```bash
-scp -P 2220 user@host:/remote/path/file.txt ./local/  # Copy over non-standard port
-openssl s_client -connect host:port                   # TLS certificate analysis
-ncat --ssl host port                                  # Encrypted TCP connections
-nmap -sV -p 22,80,443 host                            # Target specific ports for scanning
+# Copy over non-standard port
+scp -P 2220 user@host:/remote/path/file.txt ./local/
+
+# TLS certificate analysis
+openssl s_client -connect host:port
+
+# Encrypted TCP connections
+ncat --ssl host port
+
+# Target specific ports for scanning
+nmap -sV -p 22,80,443 host
 ```
 
 ---
 
 ## ⏳ Process Management
 ```bash
-ps aux | grep -i cron        # Viewer all cron processes
-crontab -u root -l           # List root's scheduled tasks (if permissions allow)
-kill -9 <PID>                # Force process termination (SIGKILL)
-top -H -p <PID>              # Monitor threads for a specific process
+# Viewer all cron processes
+ps aux | grep -i cron
+
+# List root's scheduled tasks (if permissions allow)
+crontab -u root -l
+
+# Force process termination (SIGKILL)
+kill -9 <PID>
+
+# Monitor threads for a specific process
+top -H -p <PID>
 ```
 
 ---
 
 ## 🚀 Privilege Escalation
 ```bash
-sudo -l                       # Enumerate available sudo permissions
-find / -type f -perm -4000 2>/dev/null  # Locate SUID files (setuid)
-find / -type f -perm -2000 2>/dev/null  # Locate SGID files (setgid)
+# Enumerate available sudo permissions
+sudo -l
+
+# Locate SUID files (setuid)
+find / -type f -perm -4000 2>/dev/null
+
+# Locate SGID files (setgid)
+find / -type f -perm -2000 2>/dev/null
 ```
 
 > **LinPEAS Usage:**  
-> `chmod +x linpeas.sh && ./linpeas.sh`  # Make executable and run  
+> `chmod +x linpeas.sh && ./linpeas.sh  # Make executable and run`  
 > [LinPEAS GitHub](https://github.com/carlospolop/PEASS-ng) download source
 
 ---
@@ -116,47 +136,67 @@ find / -type f -perm -2000 2>/dev/null  # Locate SGID files (setgid)
 
 ### FFUF Username Enumeration
 ```bash
-# Verbose output (-v) reveals response code differences(EX: Redirect Location):
+# Verbose output (-v) reveals response code differences (e.g., Redirect Location)
 ffuf -X POST \
-    -d "uid=FUZZ&pass=admin&btnSubmit=Login" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
-    -u http://target/login.php \
-    -w usernames.txt -v
+-d "uid=FUZZ&pass=admin&btnSubmit=Login" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-u http://target/login.php \
+-w usernames.txt -v
 
-# Echoing usernames and the redirect locations to a file
+# Echoing usernames and redirect locations to a file
 ffuf -X POST \
-    -d "uid=FUZZ&passw=admin&btnSubmit=Login" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
-    -u https://demo.testfire.net/doLogin \
-    -w admin.txt \
-    -mc 302 \
-    -v 2>&1 | awk '
-    /\| --> \|/ {redir=$NF}
-    /\* FUZZ:/ {user=$NF; print user, redir}
-    ' | sort > ur.txt
+-d "uid=FUZZ&passw=admin&btnSubmit=Login" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-u https://demo.testfire.net/doLogin \
+-w admin.txt \
+-mc 302 \
+-v 2>&1 | awk '
+/\| --> \|/ {redir=$NF}
+/\* FUZZ:/ {user=$NF; print user, redir}
+' | sort > test.txt
 
-# Printing (only) unique redirect locations and their usernames:
-ffuf -X POST \ -d "uid=FUZZ&passw=admin&btnSubmit=Login" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
-    -u https://demo.testfire.net/doLogin \
-    -w admin.txt \
-    -mc 302 \
-    -v 2>&1 | awk '
-    /\| --> \|/ {redir=$NF}
-    /\* FUZZ:/ {
-        user=$NF
-        if (!(redir in seen)) {
-            seen[redir] = user
-            print redir, user
+# Print unique redirect locations and usernames, by finding out the most frequent redirect path and filtering it out
+ffuf -X POST \
+-d "uid=FUZZ&passw=admin&btnSubmit=Login" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-u https://demo.testfire.net/doLogin \
+-w admin.txt \
+-mc 302 \
+-v 2>&1 | awk '
+/\| --> \|/ {redir=$NF; redirects[redir]++; last_redirect=redir}
+/\* FUZZ:/ {
+    raw=$NF
+    sub(/&.*/, "", raw)  # Remove everything after &
+    combo[last_redirect] = raw
+}
+END {
+    # Find the most common redirect
+    max = 0
+    for (r in redirects) {
+        if (redirects[r] > max) {
+            max = redirects[r]
+            default_redirect = r
         }
-    }'
+    }
+    # Output only those that are not the default
+    for (r in combo) {
+        if (r != default_redirect) {
+            print r, combo[r]
+        }
+    }
+}'
 ```
 
 ### SQL Injection & HTTP Testing
 ```bash
-sqlmap -u "http://target/page.php?id=1" --batch  # Basic injection detection
-curl -I http://target/admin.php                   # HEAD request for headers
-curl -X POST -H 'X-Forwarded-For: 127.0.0.1' target/page.php  # Custom header testing
+# Basic injection detection
+sqlmap -u "http://target/page.php?id=1" --batch
+
+# HEAD request for headers
+curl -I http://target/admin.php
+
+# Custom header testing
+curl -X POST -H 'X-Forwarded-For: 127.0.0.1' target/page.php
 ```
 
 ---
@@ -165,10 +205,17 @@ curl -X POST -H 'X-Forwarded-For: 127.0.0.1' target/page.php  # Custom header te
 
 ### Binary Analysis
 ```bash
-strings -n 10 binary.exe | grep "http"  # Find minimum-length strings
-exiftool photo.jpg                     # Extract file metadata
-binwalk -e firmware.bin                # Binary artifact extraction
-foremost -i file.bin -o ./extracted/   # Fast carving of header-identified files
+# Find minimum-length strings
+strings -n 10 binary.exe | grep "http"
+
+# Extract file metadata
+exiftool photo.jpg
+
+# Binary artifact extraction
+binwalk -e firmware.bin
+
+# Carve files with major headers from file.bin faster
+foremost -i file.bin -o ./extracted/
 ```
 
 > **Advanced Forensics:**  
