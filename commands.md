@@ -122,25 +122,36 @@ ffuf -X POST \
     -H "Content-Type: application/x-www-form-urlencoded" \
     -u http://target/login.php \
     -w usernames.txt -v
+
+# Echoing usernames and the redirect locations to a file
+ffuf -X POST \
+    -d "uid=FUZZ&passw=admin&btnSubmit=Login" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -u https://demo.testfire.net/doLogin \
+    -w admin.txt \
+    -mc 302 \
+    -v 2>&1 | awk '
+    /\| --> \|/ {redir=$NF}
+    /\* FUZZ:/ {user=$NF; print user, redir}
+    ' | sort > ur.txt
+
+# Printing (only) unique redirect locations and their usernames:
+ffuf -X POST \ -d "uid=FUZZ&passw=admin&btnSubmit=Login" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -u https://demo.testfire.net/doLogin \
+    -w admin.txt \
+    -mc 302 \
+    -v 2>&1 | awk '
+    /\| --> \|/ {redir=$NF}
+    /\* FUZZ:/ {
+        user=$NF
+        if (!(redir in seen)) {
+            seen[redir] = user
+            print redir, user
+        }
+    }'
 ```
 
-#### Fuzzing usernames and printing **unique** redirect locations only:
-```bash
-ffuf -X POST \ -d "uid=FUZZ&passw=admin&btnSubmit=Login" \
--H "Content-Type: application/x-www-form-urlencoded" \
--u https://demo.testfire.net/doLogin \
--w admin.txt \
--mc 302 \
--v 2>&1 | awk '
-/\| --> \|/ {redir=$NF}
-/\* FUZZ:/ {
-    user=$NF
-    if (!(redir in seen)) {
-        seen[redir] = user
-        print redir, user
-    }
-}'
-```
 ### SQL Injection & HTTP Testing
 ```bash
 sqlmap -u "http://target/page.php?id=1" --batch  # Basic injection detection
