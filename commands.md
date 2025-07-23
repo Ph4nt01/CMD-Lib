@@ -29,7 +29,7 @@ cat example.txt | uniq -c | sort -nr
 
 ## 🐋 Docker Operations
 
-### Kali Linux Quick Start in Docker:
+### Kali Linux Quick Start in Docker
 
 #### Image Transfer Between Hosts
 ```bash
