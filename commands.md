@@ -11,10 +11,10 @@ diff -r dir1/ dir2/               # Recursive directory comparison
 ```
 
 ---
+
 ## 🐋 Docker Operations
 
 ### Kali Linux Container Quick Start
-> `` or `docker pull kalilinux/kali:light` for minimal build# Essential CLI Commands 
 
 #### Image Transfer Between Hosts
 ```bash
@@ -44,6 +44,7 @@ docker start kali_shell && docker exec -it kali_shell /bin/bash
 ```
 
 ---
+
 ## 🐱 Git Essentials
 ```bash
 # Track all changes:
@@ -61,6 +62,7 @@ git push
 > `git config --global user.email "hacker@example.com"`
 
 ---
+
 ## 🌐 Network Operations
 ```bash
 scp -P 2220 user@host:/remote/path/file.txt ./local/  # Copy over non-standard port
@@ -70,6 +72,7 @@ nmap -sV -p 22,80,443 host                            # Target specific ports fo
 ```
 
 ---
+
 ## ⏳ Process Management
 ```bash
 ps aux | grep -i cron        # Viewer all cron processes
@@ -79,6 +82,7 @@ top -H -p <PID>              # Monitor threads for a specific process
 ```
 
 ---
+
 ## 🚀 Privilege Escalation
 ```bash
 sudo -l                       # Enumerate available sudo permissions
@@ -91,6 +95,7 @@ find / -type f -perm -2000 2>/dev/null  # Locate SGID files (setgid)
 > [LinPEAS GitHub](https://github.com/carlospolop/PEASS-ng) download source
 
 ---
+
 ## 🕵️ Web Testing
 
 ### FFUF Username Enumeration
@@ -111,6 +116,7 @@ curl -X POST -H 'X-Forwarded-For: 127.0.0.1' target/page.php  # Custom header te
 ```
 
 ---
+
 ## 🔍 Forensics
 
 ### Binary Analysis

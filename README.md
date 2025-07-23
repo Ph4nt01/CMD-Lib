@@ -1,10 +1,6 @@
 # CyberNotes-Vault  
 🛡️ **A knowledge base for penetration testers & security enthusiasts**  
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/LICENSE)  
-[![Status](https://img.shields.io/badge/status-active-mint)](https://github.com/Ph4nt01/CyberNotes-Vault)  
-[![Topics](https://img.shields.io/github/languages/top/Ph4nt01/CyberNotes-Vault)](https://github.com/topics/cybersecurity)  
-
 ---
 
 ## 🔭 Overview  
