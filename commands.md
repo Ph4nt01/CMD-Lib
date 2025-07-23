@@ -1,11 +1,14 @@
 
 ## 🔧 File Operations
 ```bash
-file target_file                  # Identify file type/magic bytes
+# Identify file type/magic bytes
+file target_file
 
-find /path -size +1000c -name "*.log"  # Locate files >1000 bytes with specific size/name (c=bytes, +value for minimum)
+# Locate files >1000 bytes with specific size/name (c=bytes, +value for minimum)
+find /path -size +1000c -name "*.log"
 
-sort file.txt | uniq              # Remove duplicate lines from sorted text
+# Remove duplicate lines from sorted text
+sort file.txt | uniq
 
 xxd binary_shellcode             # Generate hexdump of binary data
 
