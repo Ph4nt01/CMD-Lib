@@ -70,7 +70,7 @@ nmap -sV -p 22,80,443 host                            # Target specific ports fo
 ```
 
 ---
-## ⏱ Process Management
+## ⏳ Process Management
 ```bash
 ps aux | grep -i cron        # Viewer all cron processes
 crontab -u root -l           # List root's scheduled tasks (if permissions allow)
