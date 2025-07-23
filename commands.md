@@ -29,7 +29,7 @@ cat example.txt | uniq -c | sort -nr
 
 ## 🐋 Docker Operations
 
-### Kali Linux Container Quick Start
+### Kali Linux Quick Start in Docker:
 
 #### Image Transfer Between Hosts
 ```bash
@@ -45,7 +45,7 @@ docker load < kali_image.tar
 docker images | grep kali
 ```
 
-#### Container Lifecycle Management
+#### Container Life-cycle Management
 ```bash
 # Start interactive container
 docker run -d --name kali_shell kalilinux/kali:latest tail -f /dev/null
@@ -126,15 +126,12 @@ find / -type f -perm -4000 2>/dev/null
 find / -type f -perm -2000 2>/dev/null
 ```
 
-> **LinPEAS Usage:**  
-> `chmod +x linpeas.sh && ./linpeas.sh  # Make executable and run`  
-> [LinPEAS GitHub](https://github.com/carlospolop/PEASS-ng) download source
-
 ---
 
-## 🕵️ Web Testing
+## 🕵️ Web Pen-Testing
 
-### FFUF Username Enumeration
+### FFUF Tool
+#### Fuzzing Username
 ```bash
 # Verbose output (-v) reveals response code differences (e.g., Redirect Location)
 ffuf -X POST \
