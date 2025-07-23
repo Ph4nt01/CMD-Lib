@@ -10,13 +10,17 @@ find /path -size +1000c -name "*.log"
 # Remove duplicate lines from sorted text
 sort file.txt | uniq
 
-xxd binary_shellcode             # Generate hexdump of binary data
+# Generate hexdump of binary data
+xxd binary_shellcode            
 
-xxd -r hexdump.txt | xxd -r      # Convert hexdump back to executable binary
+# Convert hexdump back to executable binary
+xxd -r hexdump.txt | xxd -r
 
-diff file1 file2                  # Compare differences between files
+# Compare differences between files
+diff file1 file2
 
-diff -r dir1/ dir2/               # Recursive directory comparison
+# Recursive directory comparison
+diff -r dir1/ dir2/
 
 # Display number of occurrences of each line, sorted by the most frequent:
 cat example.txt | uniq -c | sort -nr
