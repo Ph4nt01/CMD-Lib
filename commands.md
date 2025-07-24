@@ -72,11 +72,28 @@ git commit -m "Initial commit"
 
 # Push to remote (ensure remote set first)
 git push
+
+# Configuring identity
+git config --global user.name "jasem"
+git config --global user.email "jasem@example.com"
+
 ```
 
-> **Before Pushing:** Configure identity with:  
-> `git config --global user.name "Hacker"`  
-> `git config --global user.email "hacker@example.com"`
+
+---
+## 🐍 Python
+
+### using virtual environments in python
+```bash
+# Creating the virtual enviroment
+python3 -m venv ~/.venv/tmdev
+
+# Activating the venv
+source ~/.venv/tmdev/bin/activate
+
+# Deactivating after usage
+deactivate
+```
 
 ---
 
@@ -152,7 +169,7 @@ ffuf -X POST \
 /\* FUZZ:/ {user=$NF; print user, redir}
 ' | sort > test.txt
 
-# Print unique redirect locations and usernames, by finding out the most frequent redirect path and filtering it out
+# Printing unique redirect locations and usernames, by finding out the most frequent redirect path and filtering it out
 ffuf -X POST \
 -d "uid=FUZZ&passw=admin&btnSubmit=Login" \
 -H "Content-Type: application/x-www-form-urlencoded" \
@@ -214,6 +231,3 @@ binwalk -e firmware.bin
 # Carve files with major headers from file.bin faster
 foremost -i file.bin -o ./extracted/
 ```
-
-> **Advanced Forensics:**  
-> Combine with `grep -a`: `strings binary.exe | grep -a "password"`
