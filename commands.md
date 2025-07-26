@@ -106,22 +106,16 @@ deactivate
 ```python
 import argparse
 
-
 def main(a):
 
     print(f"Hey {a.name}, have a good day.")
 
-
 if __name__ == "__main__":
 
     p = argparse.ArgumentParser(description="desciption")
-
     p.add_argument("-n", "--name", metavar="", default="root", help="Enter your name")
-
     a = p.parse_args()
-
     main(a)
-
 ```
 ---
 
