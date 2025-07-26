@@ -28,7 +28,6 @@ cat example.txt | uniq -c | sort -nr
 
 ---
 
-
 ## 🐋 Docker Operations
 
 ### Kali Linux Quick Start in Docker
