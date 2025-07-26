@@ -1,4 +1,5 @@
 ## 🔧 File Operations
+
 ```bash
 # Identify file type/magic bytes
 file target_file
@@ -63,6 +64,7 @@ docker start kali_shell && docker exec -it kali_shell /bin/bash
 ---
 
 ## 🐱 Git Essentials
+
 ```bash
 # Track all changes
 git add .
@@ -77,13 +79,18 @@ git push
 git config --global user.name "jasem"
 git config --global user.email "jasem@example.com"
 
+# How to add a repo as a submodule
+cd YourMainRepo
+git submodule add https://github.com/Username/YourRepo.git YourRepo
+git commit -m "Adding YourRepo as a submodule in YourMainRepo"
+git push origin main
 ```
 
 
 ---
 ## 🐍 Python
 
-### using virtual environments in python
+### Using virtual environments in python
 ```bash
 # Creating the virtual enviroment
 python3 -m venv ~/.venv/tmdev
@@ -95,9 +102,31 @@ source ~/.venv/tmdev/bin/activate
 deactivate
 ```
 
+### Argparse example usage
+```python
+import argparse
+
+
+def main(a):
+
+    print(f"Hey {a.name}, have a good day.")
+
+
+if __name__ == "__main__":
+
+    p = argparse.ArgumentParser(description="desciption")
+
+    p.add_argument("-n", "--name", metavar="", default="root", help="Enter your name")
+
+    a = p.parse_args()
+
+    main(a)
+
+```
 ---
 
 ## 🌐 Network Operations
+
 ```bash
 # Copy over non-standard port
 scp -P 2220 user@host:/remote/path/file.txt ./local/
@@ -115,6 +144,7 @@ nmap -sV -p 22,80,443 host
 ---
 
 ## ⏳ Process Management
+
 ```bash
 # Viewer all cron processes
 ps aux | grep -i cron
@@ -132,6 +162,7 @@ top -H -p <PID>
 ---
 
 ## 🚀 Privilege Escalation
+
 ```bash
 # Enumerate available sudo permissions
 sudo -l
