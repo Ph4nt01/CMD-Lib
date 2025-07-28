@@ -112,7 +112,7 @@ def main(a):
 
 if __name__ == "__main__":
 
-    p = argparse.ArgumentParser(description="desciption")
+    p = argparse.ArgumentParser(description="This guy tells you to have a good day.")
     p.add_argument("-n", "--name", metavar="", default="root", help="Enter your name")
     a = p.parse_args()
     main(a)
