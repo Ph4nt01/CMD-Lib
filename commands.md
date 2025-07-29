@@ -78,12 +78,27 @@ git push
 # Configuring identity
 git config --global user.name "jasem"
 git config --global user.email "jasem@example.com"
+```
 
+### Git sub-modules
+```bash
 # How to add a repo as a submodule
 cd YourMainRepo
 git submodule add https://github.com/Username/YourRepo.git YourRepo
 git commit -m "Adding YourRepo as a submodule in YourMainRepo"
 git push origin main
+
+# edit .gitmodules so the submodule knows to track the main branch
+git config -f .gitmodules submodule.FFF-FormFieldFinder.branch main
+git add .gitmodules
+git commit -m "Set the submodule to track main branch"
+git push origin main
+
+# How to upadte the submodule later
+git submodule update --remote yoursubmodule
+git add yoursubmodule
+git commit -m "Bump submodule to latest main"
+git push
 ```
 
 
