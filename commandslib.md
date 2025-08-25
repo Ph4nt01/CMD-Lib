@@ -80,6 +80,17 @@ git config --global user.name "jasem"
 git config --global user.email "jasem@example.com"
 ```
 
+### Making a directory into a new repo from terminal
+```sh
+cd RepoFolder
+git init
+gh repo create RepoName --public --source=. --remote=origin
+git add .
+git commit -m "hello"
+git branch -M main
+git push -u origin main
+```
+
 ### Git sub-modules
 ```bash
 # How to add a repo as a submodule
@@ -89,7 +100,7 @@ git commit -m "Adding YourRepo as a submodule in YourMainRepo"
 git push origin main
 
 # edit .gitmodules so the submodule knows to track the main branch
-git config -f .gitmodules submodule.FFF-FormFieldFinder.branch main
+git config -f .gitmodules submodule.YourRepo.branch main
 git add .gitmodules
 git commit -m "Set the submodule to track main branch"
 git push origin main
