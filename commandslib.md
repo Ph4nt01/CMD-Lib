@@ -4,6 +4,9 @@
 # Identify file type/magic bytes
 file target_file
 
+# Locate a file by name
+find / -name "config.json"
+
 # Locate files >1000 bytes with specific size/name (c=bytes, +value for minimum)
 find /path -size +1000c -name "*.log"
 
@@ -159,6 +162,19 @@ ncat --ssl host port
 
 # Target specific ports for scanning
 nmap -sV -p 22,80,443 host
+```
+
+### Tcpdump
+```sh
+# for capturing traffic of a whole subnet
+tcpdump -i <interface> -v net 192.168.1.0/24
+
+# capturing the incomign traffic of specific http server
+tcpdump -i <intf> -v `src port <portnum> and src <ipadd>`
+
+# capturing and saving the traffic on a specific port
+tcpdump -i <intf> -v -n -w sharkfiles/test.pcap port <portnum>
+
 ```
 
 ---
