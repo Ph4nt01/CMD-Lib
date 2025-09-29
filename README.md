@@ -4,7 +4,7 @@
 ---
 
 ## 🔭 Overview  
-A organized collection of security techniques, practical payloads, and operationally focused guides created during my journey in **CTF competitions**, and **web application penetration testing**. This repository functions as a reference for my learning journey.  
+A organized collection of security techniques, practical payloads, and etc. created during my journey in **CTF competitions**, and **web application penetration testing**. This repository functions as a reference for my learning journey.  
 
 ---
 
@@ -17,8 +17,6 @@ A organized collection of security techniques, practical payloads, and operation
 | [**Forensics Tips**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/forensics.md)    | Vector Titan-style debugging with Wireshark filters & stego tools   |
 | [**Crypto Basics**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/crypto.md)        | Tools for modern and historical cryptanalysis                       |
 | [**Command Library**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/commandslib.md) | Use-full commands                                                   |
-| [**CTF Lab Notes**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/flag_log.md)      | Solutions with the summarized methodolog used.                      |
-| [**Tool Time Beta**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/toolkit.md)      | Developing custom offensive scripts                                 |
 | [**Pro Tips**](https://github.com/Ph4nt01/CyberNotes-Vault/blob/main/tricks.md)             | Workflow optimizations                                              |
 
 ---
