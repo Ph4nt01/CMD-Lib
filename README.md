@@ -100,6 +100,12 @@ git push
 # Configuring identity
 git config --global user.name "jasem"
 git config --global user.email "jasem@example.com"
+
+# making Git ignore files without creating .gitignore file
+cd <yourrepo>/.git/info
+nano exclude
+<write file-name here in this file>
+git rm -r --cached <file_name>
 ```
 
 ### Making a directory into a new repo from terminal
@@ -133,7 +139,6 @@ git add yoursubmodule
 git commit -m "Bump submodule to latest main"
 git push
 ```
-
 
 ---
 ## 🐍 Python
