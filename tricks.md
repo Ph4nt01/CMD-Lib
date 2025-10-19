@@ -1,2 +1,0 @@
-- while doing ffuf command always use -v (it shows the redirect location)
-- always check inspect -> Application -> Cookies
